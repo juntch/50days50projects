@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Muli', sans-serif;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  margin: 0;
+  background: #000;
+}
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  gap: 2px;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(10, 1fr);
+}
+
+.panel {
+  grid-column-start: span 2;
+  grid-row-start: span 2;
+  background-size: cover;
+  -webkit-filter: grayscale(100%);
+	filter: grayscale(100%);
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+
+.panel:hover {
+  -webkit-filter: grayscale(0);
+	filter: grayscale(0);
+}
+
+.panel.active .panel-caption {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: transform 700ms;
+  transform: translate3d(0, 100%, 0);
+  background: #fff;
+  border: none;
+}
+
+.panel.active {
+  position: relative;
+  overflow-y: hidden;
+  grid-column: 3 / 9;
+  grid-row: 3 / 9;
+  border: 9px solid #fff;
+  transition: background-image .7s ease-in;
+  -webkit-filter: grayscale(0);
+	filter: grayscale(0);
+}
+
+.panel.active:hover .panel-caption {
+  transform: translate3d(0, 0, 0);
+}
