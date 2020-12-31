@@ -67,6 +67,7 @@ body {
 	filter: grayscale(0);
 }
 
-.panel.active:hover .panel-caption {
+.panel.active:hover .panel-caption,
+.panel.active:focus .panel-caption {
   transform: translate3d(0, 0, 0);
 }
