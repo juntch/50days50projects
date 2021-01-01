@@ -76,3 +76,28 @@ body {
   transform: translateX(-50%) translateY(-50%);
   background: var(--color-watch);
 }
+
+@media (max-width: 460px) {
+  .clock {
+    width: 300px;
+    height: 300px;
+    border: 9px solid var(--color-watch);
+  }
+
+  .hand-hour,
+  .hand-minute,
+  .hand-second {
+    height: 6px;
+  }
+  .hand-minute,
+  .hand-second {
+    width: 102px;
+  }
+  .hand-hour {
+    width: 66px;
+  }
+  .circle {
+    width: 18px;
+    height: 18px;
+  }
+}
