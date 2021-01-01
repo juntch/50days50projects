@@ -26,6 +26,7 @@ prev.addEventListener('click', () => {
 });
 
 function update() {
+  document.querySelector('.active-last').classList.remove('active-last');
   circles.forEach((circle, idx) => {
     if (idx < currentActive) {
       circle.classList.add('active');
@@ -35,6 +36,9 @@ function update() {
   });
 
   const actives = document.querySelectorAll('.active');
+
+  // fill the last active circle
+  actives[actives.length - 1].classList.add('active-last');
 
   progress.style.width =
     ((actives.length - 1) / (circles.length - 1)) * 100 + '%';
